@@ -46,7 +46,7 @@ export interface BatcherOptions {
  * together in a single call.
  */
 export function createBatcher<T = unknown>(options: BatcherOptions) {
-  const { maxBatchSize = 20, debounceMs = 10, executor = options.executor };
+  const { maxBatchSize = 20, debounceMs = 10, executor } = options;
   const pending: PendingItem<T>[] = [];
   let timer: ReturnType<typeof setTimeout> | null = null;
 
